@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            text-align: center;
+            background-color: rgb(202 198 195);
+        }
+
+        .container table {
+            background-color: rgb(179, 171, 165);
+            color: white;
+            box-shadow: 4px 6px black;
+        }
+
+        input {
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+        }
+
+        h1 {
+            color: #0404049e;
+            font-family: fantasy;
+            font-weight: lighter;
+        }
+
+        table {
+            border-radius: 10px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calcultor</h1>
+
+        <table border="2">
+            <tr>
+                <td colspan="3"><input style="width: 130px;" disabled="0" type="text" id="result"></td>
+                <td><input type="button" onclick="clr()" value="C"></td>
+            </tr>
+            <tr>
+                <td><input type="button" onclick="dispaly('1')" value="1"></td>
+                <td><input type="button" onclick="dispaly('2')" value="2"></td>
+                <td><input type="button" onclick="dispaly('3')" value="3"></td>
+                <td><input type="button" onclick="dispaly('+')" value="+"></td>
+            </tr>
+            <tr>
+                <td><input type="button" onclick="dispaly('4')" value="4"></td>
+                <td><input type="button" onclick="dispaly('5')" value="5"></td>
+                <td><input type="button" onclick="dispaly('6')" value="6"></td>
+                <td><input type="button" onclick="dispaly('-')" value="-"></td>
+            </tr>
+            <tr>
+                <td><input type="button" onclick="dispaly('7')" value="7"></td>
+                <td><input type="button" onclick="dispaly('8')" value="8"></td>
+                <td><input type="button" onclick="dispaly('9')" value="9"></td>
+                <td><input type="button" onclick="dispaly('*')" value="*"></td>
+            </tr>
+            <tr>
+                <td><input type="button" onclick="dispaly('.')" value="."></td>
+                <td><input type="button" onclick="dispaly('0')" value="0"></td>
+                <td><input type="button" onclick="calculate('=')" value="="></td>
+                <td><input type="button" onclick="dispaly('/')" value="/"></td>
+            </tr>
+        </table>
+    </div>
+
+
+    <script>
+        const dispaly = (val) => {
+            document.getElementById('result').value += val
+        }
+        const calculate = () => {
+            let x = document.getElementById('result').value
+            let solution = eval(x)
+            document.getElementById('result').value = solution
+        }
+        const clr = () => {
+            document.getElementById('result').value = ""
+        }
+    </script>
+</body>
+
+</html>
